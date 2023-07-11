@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @DataJpaTest
-public class EmployeeRepositoryTests {
+class EmployeeRepositoryTests {
     @Autowired
     private EmployeeRepository employeeRepository;
 
@@ -69,8 +69,7 @@ public class EmployeeRepositoryTests {
         List<Employee> employeeList = employeeRepository.findAll();
 
         //then - verify the output
-        assertThat(employeeList).isNotNull();
-        assertThat(employeeList.size()).isEqualTo(2);
+        assertThat(employeeList).isNotNull().hasSize(2);
     }
 
 
